@@ -1,0 +1,15 @@
+{% extends 'desktop/base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<div style="margin-bottom: 30px;">
+<p>
+    {% for tag in result %}
+    <div style="border-color: black; color: red; margin: 5px;">
+    <button style="width: 200px; height: 40px;"><a style="color: black;" target="_blank" href="https://old.zakupki.mos.ru/#/sku?s.keyword={{ tag }}">{{ tag }}</a></button>
+</div>
+{% endfor %}
+</p>
+</div>
+{% endblock %}

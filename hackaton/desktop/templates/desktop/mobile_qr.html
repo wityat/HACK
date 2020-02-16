@@ -1,0 +1,26 @@
+{% extends 'desktop/base.html' %}
+
+{% block title %}qr{% endblock %}
+
+{% block content %}
+{% load qr_code %}
+{% if not image_exist %}
+<div>
+    {% qr_from_text current_url options=my_options %}
+</div>
+<div>
+    <button type="button" class="btn btn-light btn-lg" style="margin-top: 20px; width: 250px; height: 60px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"><a href="{% url "desktop:mobile_qr" %}"
+        style="color: black;">Обновить</a>
+    </button>
+</div>
+{% else %}
+<div style="margin-top: 25px;">
+    <img src="http://185.139.69.27:8000/{{ obj.image.url }}" width="550" align="center">
+</div>
+<div>
+    <button type="button" class="btn btn-danger btn-lg" style="margin-top: 20px; width: 250px; height: 60px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"><a style ="color: white;" href="{% url "desktop:result" %}">Искать товары</a></button>
+</div>
+{% endif %}
+
+
+{% endblock %}

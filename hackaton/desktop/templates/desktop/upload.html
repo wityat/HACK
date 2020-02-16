@@ -1,0 +1,23 @@
+{% extends 'desktop/base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+{% if image_exist %}
+<div style="margin-top: 25px;">
+    <img src="http://185.139.69.27:8000/{{ obj.image.url }}" width="550" align="center">
+</div>
+<div>
+    <button type="button" class="btn btn-danger btn-lg" style="margin-top: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.5); width: 250px; height: 60px;"><a style="color: white;" href="{% url "desktop:result" %}">Искать товары</a></button>
+</div>
+{% else %}
+<div style="margin-top: 15px;">
+<form action="" method="POST" enctype="multipart/form-data" class="btn">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-primary" style="box-shadow: 0 0 10px rgba(0,0,0,0.5); width: 250px; height: 60px;" name="submit" value="Загрузить">
+</form>
+</div>
+{% endif %}
+{% endblock %}
+

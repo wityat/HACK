@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load qr_code %}
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+        body {
+            background-image: url("https://sun9-30.userapi.com/c206724/v206724700/6ea52/fzq_4_y2clQ.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+        }
+        div.main {
+            margin: 5%;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        div.wrap {
+            margin: 4%;
+        }
+        div.description {
+            margin-right: 50%;
+        }
+
+        div.image {
+            margin-left: 50%;
+        }
+        div.dynamic {
+            padding-bottom: 30px;
+            padding-top: 100px;
+            margin: auto;
+        }
+        mark.tag {
+            background: #1daa6b;
+            padding: 8px;
+            border: 2px #444444;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <img src="https://qph.fs.quoracdn.net/main-qimg-011de5342604fe4790a86357beec5ee5.webp" style="width:40px;"
+         alt="img">
+    <a class="navbar-brand" href="{% url "desktop:index" %}"><b>&nbsp;&nbsp;Tender Hack.NN Хакатон</b></a>
+</nav>
+<nav class="navbar navbar-expand-sm bg-light navbar-dark">
+    <a class="navbar-brand " href="#" style="margin-top: 5px; margin-bottom: 5px; font-size: 30px; color: black;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pip
+        install HSE</a>
+</nav>
+
+<div class="main">
+    <div class="wrap">
+    <div class="dynamic">
+        <button type="button" class="btn btn-danger btn-lg" style="box-shadow: 0 0 10px rgba(0,0,0,0.5); margin-left: 27%; width: 250px; height: 60px;"><a style="color: white;" href="{% url "desktop:upload" %}">С компьютера</a>
+        </button>
+        <button type="button" class="btn btn-light btn-lg" style="box-shadow: 0 0 10px rgba(0,0,0,0.5); width: 250px; height: 60px;" ><a href="{% url "desktop:mobile_qr" %}" style="color: black;">С телефона</a>
+        </button>
+        <div align="center">
+    {% block content %}
+    {% endblock %}
+        </div>
+    </div>
+    </div>
+    </div>
+>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
+

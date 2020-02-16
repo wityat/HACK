@@ -1,0 +1,13 @@
+{% extends 'desktop/base.html' %}
+
+{% block title %}qr{% endblock %}
+
+{% block content %}
+    {% load qr_code %}
+    <p>
+        Воспользуйтесь QR-кодом:
+    </p>
+
+    {% qr_from_text current_url options=my_options %}
+
+{% endblock %}
